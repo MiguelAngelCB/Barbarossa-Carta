@@ -11,15 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('allergen_dish', function (Blueprint $table) {
+        Schema::create('allergens',function(Blueprint $table){
             $table->id();
-
-            $table->unsignedBigInteger('dish_id');
-            $table->unsignedBigInteger('allergen_id');
-
-            $table->foreign('dish_id')->references('id')->on('dishes')->onDelete('cascade');
-            $table->foreign('allergen_id')->references('id')->on('allergens')->onDelete('cascade');
-
+            $table->string('name')->unique();
+            $table->string('icon')->unique();
             $table->timestamps();
         });
     }
@@ -29,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('allergens');
     }
 };

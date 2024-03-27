@@ -11,9 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('allergens',function(Blueprint $table){
+        Schema::create('dishes',function(Blueprint $table){
             $table->id();
             $table->string('name');
+            $table->string('slug')->unique();
+            $table->string('traduction');
+            $table->string('price');
+            $table->integer('position');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -23,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        //
+        Schema::dropIfExists('dishes');
     }
 };
