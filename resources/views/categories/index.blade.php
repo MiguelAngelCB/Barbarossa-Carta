@@ -5,13 +5,13 @@
         </h2>
     </x-slot>
 
-    <div class="py-6 h-screen bg-gray-200">
+    <div class="py-6 h-screen bg-gray-200" >
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div id="accordion-collapse" data-accordion="collapse">
             @foreach ($categories as $index => $category)
     <div class="mb-5">
-    <h2 id="accordion-collapse-heading-{{ $index + 1 }}">
-        <button type="button" class="bg-red-400 text-black hover:text-black hover:bg-red-200 flex items-center justify-between w-full p-5 font-medium border-2 border-white rounded-t-xl gap-3" data-accordion-target="#accordion-collapse-body-{{ $index + 1 }}" aria-expanded="true" aria-controls="accordion-collapse-body-{{ $index + 1 }}">
+    <h2 id="accordion-collapse-heading-{{ $index + 1 }}" style="color:grey">
+        <button type="button" class="bg-red-400 hover:text-black hover:bg-red-200 flex items-center justify-between w-full p-5 font-medium border-2 border-white rounded-t-xl gap-3" data-accordion-target="#accordion-collapse-body-{{ $index + 1 }}" aria-expanded="false" aria-controls="accordion-collapse-body-{{ $index + 1 }}">
             <span><p class="text-lg font-bold">{{ $category->name }}</p>  
                 @if ($category->description)
                     <div>
@@ -43,15 +43,7 @@
     </div>
     </div>
 @endforeach
-
             </div>
-
-
-
-
         </div>
     </div>
 </x-app-layout>
-
-@vite(['resources/css/collapsable.css', 'resources/js/collapsable.js'])
-@vite(['resources/css/app.css','resources/js/app.js'])

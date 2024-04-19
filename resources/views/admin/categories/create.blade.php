@@ -1,5 +1,5 @@
 @extends('adminlte::page')
-@section('title', 'Barbarrosa')
+@section('title', 'GUTSUI')
 
 @section('content_header')
 <h1>Create category</h1>
