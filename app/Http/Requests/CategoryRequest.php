@@ -28,6 +28,7 @@ class CategoryRequest extends FormRequest
             'slug' => 'required|unique:categories'
         ];
         if ($category) {
+            $rules['name'] =  'required|unique:categories,slug,'.$category->id;
             $rules['slug'] =  'required|unique:categories,slug,'.$category->id;
         }
         

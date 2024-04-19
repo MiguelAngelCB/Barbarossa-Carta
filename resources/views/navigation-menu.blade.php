@@ -6,7 +6,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-1 sm:-my-px sm:flex">
                     <x-nav-link href="{{ url('/') }}" :active="request()->routeIs('admin.home')">
-                        {{ __('BARBAROSSA') }}
+                        {{ __('GUTSUI') }}
                     </x-nav-link>
                 </div>
             </div>

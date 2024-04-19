@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Barbarrosa')
+@section('title', 'GUTSUI')
 
 @section('content_header')
 
